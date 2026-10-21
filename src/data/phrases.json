@@ -1,0 +1,31 @@
+{
+  "phrases": [
+    {
+      "id": "opening",
+      "content": "The adventure continues...",
+      "displayDuration": 2000,
+      "positionClass": "bottom-center",
+      "transitionStyle": "fade"
+    },
+    {
+      "id": "middle",
+      "content": "In a world of wonders...",
+      "displayDuration": 2500,
+      "positionClass": "bottom-center",
+      "transitionStyle": "fade"
+    },
+    {
+      "id": "closing",
+      "content": "Until next time, Lapis.",
+      "displayDuration": 3000,
+      "positionClass": "bottom-center",
+      "transitionStyle": "fade"
+    }
+  ],
+  "animationConfig": {
+    "frame1Path": "lapis-arm-1.png",
+    "frame2Path": "lapis-arm-2.png",
+    "frameRate": 1
+  },
+  "backgroundPath": "backgrounds/beach-scene.png"
+}

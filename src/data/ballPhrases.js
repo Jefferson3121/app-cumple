@@ -1,0 +1,17 @@
+export const ballPhrases = [
+  'Frase placeholder 01',
+  'Frase placeholder 02',
+  'Frase placeholder 03',
+  'Frase placeholder 04',
+  'Frase placeholder 05',
+  'Frase placeholder 06',
+  'Frase placeholder 07',
+  'Frase placeholder 08',
+  'Frase placeholder 09',
+  'Frase placeholder 10',
+  'Frase placeholder 11',
+  'Frase placeholder 12',
+  'Frase placeholder 13',
+  'Frase placeholder 14',
+  'Frase placeholder 15',
+];

@@ -1,0 +1,203 @@
+/* Lapis Pixel Art Scene Styling */
+
+.pixel-art-scene {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1e90ff;
+  position: relative;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Background image container */
+.scene-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Scene content container */
+.scene-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Character animation container */
+.character-container {
+  position: relative;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.character-frame {
+  max-width: 300px;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  user-select: none;
+}
+
+/* Text phrase display */
+.text-phrase-container {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  z-index: 20;
+}
+
+.text-phrase {
+  font-size: clamp(16px, 4vw, 28px);
+  color: #ffffff;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+  word-wrap: break-word;
+  animation: fadeInOut 0.3s ease-in-out;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+}
+
+/* Fade transition animation */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Slide transition animation */
+@keyframes slideInOut {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.text-phrase.slide {
+  animation: slideInOut 0.3s ease-in-out;
+}
+
+/* Loading/Error state */
+.scene-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.scene-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #ff6b6b;
+  font-size: 18px;
+  text-align: center;
+  padding: 40px;
+}
+
+.error-icon {
+  font-size: 48px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .pixel-art-scene {
+    height: 100vh;
+  }
+
+  .character-container {
+    margin-bottom: 80px;
+  }
+
+  .character-frame {
+    max-width: 200px;
+    max-height: 280px;
+  }
+
+  .text-phrase {
+    font-size: clamp(14px, 3.5vw, 20px);
+    padding: 15px;
+  }
+
+  .text-phrase-container {
+    bottom: 30px;
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .character-container {
+    margin-bottom: 100px;
+  }
+
+  .character-frame {
+    max-width: 150px;
+    max-height: 200px;
+  }
+
+  .text-phrase {
+    font-size: clamp(12px, 3vw, 16px);
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .text-phrase-container {
+    bottom: 20px;
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+/* Touch target sizing for mobile */
+.scene-navigation-target {
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Performance optimization */
+.character-frame,
+.scene-background {
+  will-change: auto;
+}
+
+.scene-content {
+  will-change: contents;
+}
